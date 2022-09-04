@@ -82,6 +82,7 @@ export default function ProfileScreen() {
 
 	return (
 		<>
+			<br />
 			{isLoading ? (
 				<ClipLoader />
 			) : (
