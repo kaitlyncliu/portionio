@@ -42,7 +42,7 @@ function App() {
 						)}
 
 						<Container>
-							<Nav.Link href="/social">Social</Nav.Link>
+							<Nav.Link href="/share">Social</Nav.Link>
 						</Container>
 					</Nav>
 				</Navbar>
