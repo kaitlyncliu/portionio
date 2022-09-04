@@ -11,6 +11,9 @@ import { useAuth0 } from '@auth0/auth0-react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function App() {
 	const { loginWithRedirect, logout, isAuthenticated, isLoading } = useAuth0();
@@ -21,7 +24,7 @@ function App() {
 			<header>
 				<Navbar fixed="bottom" bg="dark" variant="dark" expand="lg">
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<Nav>
+					<Nav className="d-flex bd-highlight">
 						<Container>
 							<Nav.Link href="/">Home</Nav.Link>
 						</Container>
@@ -42,8 +45,9 @@ function App() {
 						)}
 
 						<Container>
-							<Nav.Link href="/share">Social</Nav.Link>
+							<Nav.Link href="/social">Social</Nav.Link>
 						</Container>
+						<Container className="w-50"></Container>
 					</Nav>
 				</Navbar>
 			</header>

@@ -4,31 +4,35 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Stack from 'react-bootstrap/Stack';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
-
-function RestaurantInfo() {
+function RestaurantScreen() {
 	return (
 		<Container>
-			<Row>
-				<Col><Image src="___" rounded /></Col>
-			</Row>
-			<Row>
-				<Stack gap={2}>
-      				<div className="bg-light border">Name__</div>
-      				<div className="bg-light border">Address__</div>
-      				<div className="bg-light border">Relative Portion Size__</div>
-    			</Stack>
-			</Row>
-			<Row>
-				<Accordion>
-					<Accordion.Item eventKey="0">
-						<Accordion.Header>Description</Accordion.Header>
-						<Accordion.Body>___</Accordion.Body>
-					</Accordion.Item>
-				</Accordion>
-			</Row>
+			<br />
+			<Card className="mx-auto w-50">
+				<Card.Img variant="top" className="h-50" src="" />
+				<Card.Body>
+					<Row>
+						<Col>
+							<Card.Title>McDonalds</Card.Title>
+						</Col>
+						<Col>
+							<Card.Title className="text-end align-bottom">
+								1 portion
+							</Card.Title>
+						</Col>
+					</Row>
+					<Card.Text>
+						Some quick example text to build on the card title and make up the
+						bulk of the card's content.
+					</Card.Text>
+					<Button variant="primary">Visit this restaurant</Button>
+				</Card.Body>
+			</Card>
 		</Container>
-	)
+	);
 }
 
-export default RestaurantInfo;
+export default RestaurantScreen;

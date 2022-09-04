@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import mcdonaldsImg from '../images/mcdonalds.jpg';
 import fujiyaImg from '../images/fujiya.jpg';
 import shakeshackImg from '../images/shakeshack.jpg';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 // const RestaurantCard = (name, address, relativePortionSize, image) => {
 //   return (
@@ -29,38 +31,69 @@ const RestaurantCard = () => {
 			<Card className="mx-auto w-50">
 				<Card.Img variant="top" className="h-50" src={mcdonaldsImg} />
 				<Card.Body>
-					<Card.Title>Card Title</Card.Title>
+					<Row>
+						<Col>
+							<Card.Title>McDonalds</Card.Title>
+						</Col>
+						<Col>
+							<Card.Title className="text-end align-bottom">
+								1 portion
+							</Card.Title>
+						</Col>
+					</Row>
 					<Card.Text>
 						Some quick example text to build on the card title and make up the
 						bulk of the card's content.
 					</Card.Text>
-					<Button variant="primary">Go somewhere</Button>
+					<Button variant="primary">Visit this restaurant</Button>
 				</Card.Body>
 			</Card>
 			<br />
 			<Card className="mx-auto w-50">
 				<Card.Img variant="top" className="h-50" src={fujiyaImg} />
 				<Card.Body>
-					<Card.Title>Card Title</Card.Title>
+					<Row>
+						<Col>
+							<Card.Title>Fujiya Ramen</Card.Title>
+						</Col>
+						<Col>
+							<Card.Title className="text-end align-bottom">
+								2 portions
+							</Card.Title>
+						</Col>
+					</Row>
 					<Card.Text>
 						Some quick example text to build on the card title and make up the
 						bulk of the card's content.
 					</Card.Text>
-					<Button variant="primary">Go somewhere</Button>
+					<Button variant="primary">Share with a friend</Button>
 				</Card.Body>
 			</Card>
 			<br />
 			<Card className="mx-auto w-50">
 				<Card.Img variant="top" className="h-50" src={shakeshackImg} />
 				<Card.Body>
-					<Card.Title>Card Title</Card.Title>
+					<Row>
+						<Col>
+							<Card.Title>Shake Shack</Card.Title>
+						</Col>
+						<Col>
+							<Card.Title className="text-end align-bottom">
+								0.75 portions
+							</Card.Title>
+						</Col>
+					</Row>
 					<Card.Text>
 						Some quick example text to build on the card title and make up the
 						bulk of the card's content.
 					</Card.Text>
-					<Button variant="primary">Go somewhere</Button>
+					<Button variant="primary">Visit this restaurant</Button>
 				</Card.Body>
 			</Card>
+			<br />
+			<br />
+			<br />
+			<br />
 		</Container>
 	);
 };

@@ -87,7 +87,8 @@ export default function ProfileScreen() {
 				<ClipLoader />
 			) : (
 				<Row>
-					<Form onSubmit={submitHandler}>
+					<Form className="w-50 mx-auto" onSubmit={submitHandler}>
+						<br />
 						<Form.Label column sm={2}>
 							{user.name}'s Profile
 						</Form.Label>
