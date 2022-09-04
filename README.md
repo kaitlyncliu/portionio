@@ -2,6 +2,9 @@
 
 Portion.io is an app designed to combat unpredictable food portion sizes, equipped with an algorithm that calculates just how many portions of food a restaurant will serve you on average.
 
+DevPost: https://devpost.com/software/portion-io
+Youtube: https://youtu.be/RxtvWeAgI58
+
 ## Inspiration
 
 Through personal conversations with friends, we find that it is a common issue for our peers to dispose of uneaten food due to their inability to finish it. Most people feel that some restaurants have unexpectedly large serving sizes which they are unable to finish. After conducting some background research regarding food wastage, we realized that food is one of the largest sources of waste, hence this is an issue requires our  attention.
