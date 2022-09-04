@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import RestaurantScreen from './screens/RestaurantScreen';
+import ShareScreen from './screens/ShareScreen';
 import Button from 'react-bootstrap/Button';
 import { useAuth0 } from '@auth0/auth0-react';
 import ClipLoader from 'react-spinners/ClipLoader';
@@ -52,7 +53,7 @@ function App() {
 						<Route path="/" element={<HomeScreen />} />
 						<Route path="/profile" element={<ProfileScreen />} />
 						<Route path="/restaurants/:id" element={<RestaurantScreen />} />
-						{/* <Route path="/share" element={<ShareScreen />} /> */}
+						<Route path="/share" element={<ShareScreen />} />
 					</Routes>
 				</Container>
 			</main>
