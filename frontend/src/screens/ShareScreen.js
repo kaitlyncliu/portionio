@@ -1,73 +1,77 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import Talk from 'talkjs';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
+import Figure from 'react-bootstrap/Figure';
+import Badge from 'react-bootstrap/Badge';
 
-export default class App extends Component {
-	constructor(props) {
-		super(props);
 
-		this.inbox = undefined;
-	}
-
-	componentDidMount() {
-		// Promise can be `then`ed multiple times
-		Talk.ready
-			.then(() => {
-				const me = new Talk.User({
-					id: '12345231',
-					name: 'George Looney',
-					email: 'george@looney.net',
-					photoUrl: 'https://talkjs.com/docs/img/george.jpg',
-					welcomeMessage: 'Hey there! How are you? :-)',
-				});
-
-				if (!window.talkSession) {
-					window.talkSession = new Talk.Session({
-						appId: 'YOUR APP ID HERE',
-						me: me,
-					});
-				}
-
-				const other = new Talk.User({
-					id: '54321',
-					name: 'Ronald Raygun',
-					email: 'ronald@teflon.com',
-					photoUrl: 'https://talkjs.com/docs/img/ronald.jpg',
-					welcomeMessage: 'Hey there! Love to chat :-)',
-				});
-
-				// You control the ID of a conversation. oneOnOneId is a helper method that generates
-				// a unique conversation ID for a given pair of users.
-				const conversationId = Talk.oneOnOneId(me, other);
-
-				const conversation =
-					window.talkSession.getOrCreateConversation(conversationId);
-				conversation.setParticipant(me);
-				conversation.setParticipant(other);
-
-				this.inbox = window.talkSession.createInbox({
-					selected: conversation,
-				});
-				this.inbox.mount(this.container);
-			})
-			.catch((e) => console.error(e));
-	}
-
-	componentWillUnmount() {
-		if (this.inbox) {
-			this.inbox.destroy();
-		}
-	}
-
-	render() {
-		return (
-			<span>
-				<div style={{ height: '500px' }} ref={(c) => (this.container = c)}>
-					Loading...
-				</div>
-			</span>
-		);
-	}
+function ShareScreen() {
+    return (
+        <div>
+        <div>
+			<br />
+			<Card className="w-50 mx-auto">
+				<Card.Body>
+					<Row>
+						<Col>
+							<h2>Chat with Andrew</h2>
+						</Col>
+					</Row>
+                    <br />
+                    <br />
+                    <Row>
+                        <Col>
+                            <h8> Hey! Wanna grab Fujiya with me?</h8>
+                        </Col>
+					</Row>
+                    <Row>
+                        <Col>
+                            <h8> I don't think I can eat a whole bowl</h8>
+                        </Col>
+					</Row>
+                    <Row>
+                        <Col>
+                            <h8> :( </h8>
+                        </Col>
+					</Row>
+                    <br />
+                    <br />
+                    <br />
+                    <Row>
+                        <Col>
+                            <h8> </h8>
+                        </Col>
+                        <Col>
+                            <h8> </h8>
+                        </Col>
+                        <Col>
+                            <h8> </h8>
+                        </Col>
+                        <Col>
+                            <h8 class="ml-5"> Heyy let's go! </h8>
+                        </Col>
+					</Row>
+                    <br />
+                    <br />
+                    <Row>
+                        {/* <form>
+                            <div class="form-group">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="message"></input>
+                            </div>
+                        </form> */}
+                        <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Message..." aria-label="Recipient's username" aria-describedby="basic-addon2"></input>
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">{'>'}</span>
+                        </div>
+                        </div>
+                    </Row>
+				</Card.Body>
+			</Card>
+		</div>
+        </div>
+    );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default ShareScreen;
