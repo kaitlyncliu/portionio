@@ -2,9 +2,9 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-import mcdonaldsImg from '../images/mcdonalds.jpg';
-import fujiyaImg from '../images/fujiya.jpg';
-import shakeshackImg from '../images/shakeshack.jpg';
+import mcdonaldsImg from '../images/mcdonaldsRectangle.jpg';
+import fujiyaImg from '../images/ramen.jpg';
+import shakeshackImg from '../images/shakeShackFinal.jpeg';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { NavLink } from 'react-router-dom';
@@ -43,10 +43,32 @@ const RestaurantCard = () => {
 						</Col>
 					</Row>
 					<Card.Text>
-						Some quick example text to build on the card title and make up the
-						bulk of the card's content.
+						This restaurant seems to be a good fit portion-wise!
 					</Card.Text>
 					<NavLink to="/restaurants/1">
+						<Button variant="primary">Visit this restaurant</Button>
+					</NavLink>
+				</Card.Body>
+			</Card>
+			<br />
+			<Card className="mx-auto w-50">
+				<Card.Img variant="top" className="h-50" src={shakeshackImg} />
+				<Card.Body>
+					<Row>
+						<Col>
+							<Card.Title>Shake Shack</Card.Title>
+						</Col>
+						<Col>
+							<Card.Title className="text-end align-bottom">
+								0.75 portions
+							</Card.Title>
+						</Col>
+					</Row>
+					<Card.Text>
+						This restaurant's portions are a little small for you, so maybe try
+						a different restaurant or order a side.
+					</Card.Text>
+					<NavLink to="/restaurants/0.75">
 						<Button variant="primary">Visit this restaurant</Button>
 					</NavLink>
 				</Card.Body>
@@ -66,37 +88,15 @@ const RestaurantCard = () => {
 						</Col>
 					</Row>
 					<Card.Text>
-						Some quick example text to build on the card title and make up the
-						bulk of the card's content.
+						This restaurant's portions might be a bit big for you, so bring a
+						friend!
 					</Card.Text>
 					<NavLink to="/social">
 						<Button variant="primary">Share with a friend</Button>
 					</NavLink>
 				</Card.Body>
 			</Card>
-			<br />
-			<Card className="mx-auto w-50">
-				<Card.Img variant="top" className="h-50" src={shakeshackImg} />
-				<Card.Body>
-					<Row>
-						<Col>
-							<Card.Title>Shake Shack</Card.Title>
-						</Col>
-						<Col>
-							<Card.Title className="text-end align-bottom">
-								0.75 portions
-							</Card.Title>
-						</Col>
-					</Row>
-					<Card.Text>
-						Some quick example text to build on the card title and make up the
-						bulk of the card's content.
-					</Card.Text>
-					<NavLink to="/restaurants/0.75">
-						<Button variant="primary">Visit this restaurant</Button>
-					</NavLink>
-				</Card.Body>
-			</Card>
+
 			<br />
 			<br />
 			<br />
