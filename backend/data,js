@@ -1,0 +1,32 @@
+const data = {
+	users: [
+		{
+			fullName: 'Samantha K',
+			BMI: 20,
+			age: 30,
+			activityLevel: 2,
+		},
+	],
+
+	restaurants: [
+		{
+			name: 'McDonalds',
+			address: '50 Old McDonald Road, Philadelphia, Pennsylvania, 15289',
+			relativePortionSize: 1,
+			image: '/images/mcdonalds.jpg',
+		},
+		{
+			name: 'Shake Shack',
+			address: '100 Shaky Road, Philadelphia, Pennsylvania, 15218',
+			image: '/images/shakeshack.jpg',
+			relativePortionSize: 0.75,
+		},
+		{
+			name: 'Fujiya Ramen',
+			address: '815 S Aiken Ave, Pittsburgh, Pennsylvania, 15213',
+			image: 'images/fujiya.jpg',
+			relativePortionSize: 1.25,
+			description: 'A local ramen shop serving ramen, donburi, and yakitori.',
+		},
+	],
+};
