@@ -1,27 +1,24 @@
 import express, { application } from 'express';
 import path from 'path';
+import { MongoClient } from 'mongodb';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import restaurantRouter from './routes/restaurantRoutes.js';
 import userRouter from './routes/userRoutes.js';
 
+
 dotenv.config();
 
 const app = express();
 
-const mongoDB = 'mongodb+srv://dangelic:mongodb@cluster0.avdoc6k.mongodb.net/test';
-mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
-// mongoose
-// 	.connect('mongodb+srv://dangelic:mongodb@cluster0.avdoc6k.mongodb.net/test')
-// 	.then(() => {
-// 		console.log('connected to db');
-// 	})
-// 	.catch((err) => {
-// 		console.log(err.message);
-// 	});
+mongoose
+	.connect('mongodb+srv://dangelic:mongodb@cluster0.avdoc6k.mongodb.net/pennapps')
+	.then(() => {
+		console.log('connected to db');
+	})
+	.catch((err) => {
+		console.log(err.message);
+	});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
