@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
@@ -11,9 +11,6 @@ import { useAuth0 } from '@auth0/auth0-react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 function App() {
 	const { loginWithRedirect, logout, isAuthenticated, isLoading } = useAuth0();
@@ -26,16 +23,22 @@ function App() {
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Nav className="d-flex bd-highlight">
 						<Container>
-							<Nav.Link href="/">Home</Nav.Link>
+							<NavLink to="/">
+								<Button>Home</Button>
+							</NavLink>
 						</Container>
 						{isLoading ? <ClipLoader /> : <></>}
 						{!isLoading && isAuthenticated ? (
 							<>
 								<Container>
-									<Nav.Link href="/profile">Profile</Nav.Link>
+									<NavLink to="/profile">
+										<Button>Profile</Button>
+									</NavLink>
 								</Container>
 								<Container>
-									<Button onClick={() => logout()}>Log Out</Button>
+									<Nav.Item>
+										<Button onClick={() => logout()}>Logout</Button>
+									</Nav.Item>
 								</Container>
 							</>
 						) : (
@@ -45,7 +48,9 @@ function App() {
 						)}
 
 						<Container>
-							<Nav.Link href="/social">Social</Nav.Link>
+							<NavLink to="/social">
+								<Button>Social</Button>
+							</NavLink>
 						</Container>
 						<Container className="w-50"></Container>
 					</Nav>
@@ -57,7 +62,7 @@ function App() {
 						<Route path="/" element={<HomeScreen />} />
 						<Route path="/profile" element={<ProfileScreen />} />
 						<Route path="/restaurants/:id" element={<RestaurantScreen />} />
-						<Route path="/share" element={<ShareScreen />} />
+						<Route path="/social" element={<ShareScreen />} />
 					</Routes>
 				</Container>
 			</main>

@@ -7,6 +7,7 @@ import fujiyaImg from '../images/fujiya.jpg';
 import shakeshackImg from '../images/shakeshack.jpg';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { NavLink } from 'react-router-dom';
 
 // const RestaurantCard = (name, address, relativePortionSize, image) => {
 //   return (
@@ -45,7 +46,9 @@ const RestaurantCard = () => {
 						Some quick example text to build on the card title and make up the
 						bulk of the card's content.
 					</Card.Text>
-					<Button variant="primary">Visit this restaurant</Button>
+					<NavLink to="/restaurants/1">
+						<Button variant="primary">Visit this restaurant</Button>
+					</NavLink>
 				</Card.Body>
 			</Card>
 			<br />
@@ -66,7 +69,9 @@ const RestaurantCard = () => {
 						Some quick example text to build on the card title and make up the
 						bulk of the card's content.
 					</Card.Text>
-					<Button variant="primary">Share with a friend</Button>
+					<NavLink to="/social">
+						<Button variant="primary">Share with a friend</Button>
+					</NavLink>
 				</Card.Body>
 			</Card>
 			<br />
@@ -87,7 +92,9 @@ const RestaurantCard = () => {
 						Some quick example text to build on the card title and make up the
 						bulk of the card's content.
 					</Card.Text>
-					<Button variant="primary">Visit this restaurant</Button>
+					<NavLink to="/restaurants/0.75">
+						<Button variant="primary">Visit this restaurant</Button>
+					</NavLink>
 				</Card.Body>
 			</Card>
 			<br />
